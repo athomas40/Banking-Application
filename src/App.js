@@ -4,6 +4,7 @@ import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/LogIn';
 import axios from "axios";
+import './App.css';
 
 class App extends Component {
   constructor(){
@@ -60,11 +61,13 @@ class App extends Component {
 
     const LogInComponent= () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />)
     return(
-      <Router>
+      <div className="App">
+        <Router>
           <Route exact path="/" component={HomeComponent}/>
           <Route exact path="/userProfile" render={UserProfileComponent}/>
           <Route exact path="/login" render={LogInComponent}/>
-      </Router>
+        </Router>
+      </div>
       
     );
   }
