@@ -34,6 +34,8 @@ class App extends Component {
         debits = debits.data;
         credits = credits.data;
 
+        // console.log(credits);
+
         let debitSum = 0,
             creditSum = 0;
         debits.forEach((debit) => {
@@ -55,31 +57,6 @@ class App extends Component {
         this.setState({ currentUser: newUser });
     };
 
-
-      handleCreditDescriptionChange = (event) => {
-        this.setState({
-            creditDescription: event.target.value,
-        });
-    };
-
-    handleCreditAmountChange = (event) => {
-        this.setState({
-            creditAmount: event.target.value,
-        });
-    };
-
-    handleCreditSubmit = (event) => {
-      event.preventDefault();
-      this.setState( currentCredits => ({
-        debits: [...currentCredits.debits, {
-                                              description: this.state.creditDescription,
-                                              amount: this.state.creditAmount,
-                                              date: this.state.currentTime,
-                                            }],
-      })
-      )
-    }
-
     render() {
         const HomeComponent = () => (
             <Home accountBalance={this.state.accountBalance} />
@@ -100,9 +77,6 @@ class App extends Component {
             <Credits
                 credits={this.state.credits}
                 accountBalance={this.state.accountBalance}
-                handleCreditSubmit={this.handleCreditSubmit}
-                handleCreditDescriptionChange={this.handleCreditDescriptionChange}
-                handleCreditAmountChange={this.handleCreditAmountChange}
             />
         );
 
