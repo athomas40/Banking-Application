@@ -15,6 +15,8 @@ class Home extends Component{
                 <div></div>
                 <Link to="/userProfile">User Profile</Link>
                 <div></div>
+                <Link to="/debits">Debits</Link>
+                <div></div>
 
                 <div></div>
                 <h2>Account Balance</h2>
@@ -22,8 +24,6 @@ class Home extends Component{
             </div>
         );
     }
-
-
 }
 
 export default Home;
