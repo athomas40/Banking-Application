@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
+import Debits from './components/Debits';
 import LogIn from './components/LogIn';
 import Credits from './components/Credits';
 import axios from 'axios';
@@ -79,6 +80,8 @@ class App extends Component {
                 accountBalance={this.state.accountBalance}
             />
         );
+      
+        const DebitComponent = () => (<Debits allDebits={this.state.debits} accountBalance={this.state.accountBalance}/>)
 
         return (
             <div className="App">
@@ -87,12 +90,14 @@ class App extends Component {
                     <Route exact path="/" component={HomeComponent} />
                     <Route exact path="/userProfile" render={UserProfileComponent} />
                     <Route exact path="/login" render={LogInComponent} />
+                    <Route exact path="/debits" render={DebitComponent}/>
                     <Route exact path="/credits" render={CreditComponent} />
                   </Switch>
                 </Router>
             </div>
         );
     }
+
 }
 
 export default App;
