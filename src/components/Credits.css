@@ -1,0 +1,9 @@
+.Credits {
+    margin-bottom: 50px;
+}
+
+
+.Credits-Transaction {
+    display: flex;
+    justify-content: space-around;
+}
