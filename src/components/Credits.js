@@ -14,17 +14,8 @@ class Credits extends Component {
     }
 
     componentDidMount() {
-        let copiedCredits = [];
-
-        // copy over inital credit transactions from API
-        for (let i = 0; i < this.props.credits.length; i++) {
-            copiedCredits.push(this.props.credits[i]);
-        }
-
+        const copiedCredits = this.props.credits.map( credit => credit )
         this.setState({ credits: copiedCredits })
-
-
-        // const copiedCredits = this.props.credits.map( credit => credit )
     }
 
 
