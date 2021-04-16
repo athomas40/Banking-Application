@@ -9,8 +9,8 @@ import axios from 'axios';
 import './App.css';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             accountBalance: 0,
             currentUser: {
@@ -23,8 +23,26 @@ class App extends Component {
             creditAmount: 0,
             currentTime: new Date().toLocaleString(),
         };
+        this.handlerDebit = this.handlerDebit.bind(this);
+        this.handlerCredit = this.handlerCredit.bind(this);
         // this.addDebit = this.addDebit.bind(this)
         // this.addCredit = this.addCredit.bind(this)
+    }
+    handlerDebit(debitAmount){
+        console.log(typeof debitAmount)
+        this.setState({
+            accountBalance: this.state.accountBalance - parseFloat(debitAmount)
+        });
+    }
+
+    handlerCredit(creditAmount){
+        console.log(typeof this.state.accountBalance);
+        console.log(typeof creditAmount);
+
+        this.setState({
+            accountBalance: this.state.accountBalance + parseFloat(creditAmount)
+        });
+        console.log(this.state.accountBalance);
     }
 
     async componentDidMount() {
@@ -78,11 +96,12 @@ class App extends Component {
             <Credits
                 credits={this.state.credits}
                 accountBalance={this.state.accountBalance}
+                handlerCredit={this.handlerCredit}
             />
         );
       
-        const DebitComponent = () => (<Debits allDebits={this.state.debits} accountBalance={this.state.accountBalance}/>)
-
+        // const DebitComponent = () => (<Debits allDebits={this.state.debits} accountBalance={this.state.accountBalance}/>)
+        const DebitComponent = () => (<Debits allDebits={this.state.debits} accountBalance={this.state.accountBalance} handlerDebit={this.handlerDebit}/>)
         return (
             <div className="App">
                 <Router>
