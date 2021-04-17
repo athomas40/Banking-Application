@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AccountBalance from './AccountBalance';
 import './Credits.css';
+
 
 class Credits extends Component {
     constructor(props){
@@ -41,6 +43,10 @@ class Credits extends Component {
       event.preventDefault();
       let formattedDate = new Date(this.state.date).toISOString(); // formats date as UTC
       let tempCredit = {description: this.state.description, amount: this.state.amount, date: formattedDate};
+      let creditAmount = tempCredit.amount;
+      console.log(tempCredit.amount);
+
+      this.props.handlerCredit(creditAmount);
 
       this.setState(
           currentCredits => ({
@@ -99,7 +105,8 @@ class Credits extends Component {
                     <button>Add transaction</button>
                 </form>
 
-                <p>Account Balance : {this.props.accountBalance}</p>
+                <h2>Account Balance</h2>
+                <AccountBalance accountBalance={this.props.accountBalance}/>
 
                 <Link to="/">Home</Link>
                 <br />
