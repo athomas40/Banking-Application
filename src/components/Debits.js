@@ -90,6 +90,7 @@ class Debits extends Component{
                 <div></div>
                 <Link to="/userProfile">User Profile</Link>
                 <div></div>
+                <Link to="/credits">Credits</Link>
             </div>
         );
     }
