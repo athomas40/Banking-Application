@@ -1,0 +1,9 @@
+.Debits {
+    margin-bottom: 50px;
+}
+
+
+.Debits-Transaction {
+    display: flex;
+    justify-content: space-around;
+}
