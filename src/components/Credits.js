@@ -58,56 +58,55 @@ class Credits extends Component {
 
     render() {
         return (
-            <div>
+            <div className = "BackgroundColor1">
                 <h1>Credits</h1>
                 <div>
                     {this.state.credits.map((c, index) => {
                         return (
                             <div className="Credits-Transaction" key={index}>
-                                <p>Description: {c.description}</p>
+                                <p>Description: {c.description} </p>
                                 <p>Amount: {c.amount}</p>
                                 <p>Date: {c.date}</p>
                             </div>
                         );
                     })}
                 </div>
-                <br />
-
-                <h3>Enter a new credit transaction:</h3>
-                <form onSubmit={this.handleCreditSubmit}>
-                    <div>
-                        <label htmlFor="description">Description</label>
-                        <input
-                            type="text"
-                            name="description"
-                            onChange={this.handleDescriptionChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="amount">Amount</label>
-                        <input
-                            type="number"
-                            name="amount"
-                            onChange={this.handleAmountChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="date">Date</label>
-                        <input
-                            type="date"
-                            name="date"
-                            min="1970-01-01"
-                            max="2050-12-31"
-                            placeholder="yyyy-mm-dd"
-                            onChange={this.handleDateChange}
-                        />
-                    </div>
-                    <button>Add transaction</button>
+                    <h3>Enter a new credit transaction:</h3>
+                    <form onSubmit={this.handleCreditSubmit}>
+                        <div>
+                            <label htmlFor="description">Description</label>
+                            <input
+                                type="text"
+                                name="description"
+                                onChange={this.handleDescriptionChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="amount">Amount</label>
+                            <input
+                                type="number"
+                                name="amount"
+                                onChange={this.handleAmountChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="date">Date</label>
+                            <input
+                                type="date"
+                                name="date"
+                                min="1970-01-01"
+                                max="2050-12-31"
+                                placeholder="yyyy-mm-dd"
+                                onChange={this.handleDateChange}
+                            />
+                        </div>
+                        <button>Add transaction</button>
                 </form>
 
                 <h2>Account Balance</h2>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
-
+                
+                <br/>
                 <Link to="/">Home</Link>
                 <br />
                 <Link to="/logIn">Log In</Link>
@@ -115,8 +114,7 @@ class Credits extends Component {
                 <Link to="/userProfile">User Profile</Link>
                 <br />
                 <Link to="/debits">Debits</Link>
-                
-            </div>
+            </div>  
         );
     }
 }

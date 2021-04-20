@@ -6,8 +6,9 @@ import './LogIn.css';
 class Home extends Component{
     render(){
         return(
-            <div>
+            <div className="Style">
                 <div className="addSpace"></div>
+                <br />
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7zHEzmH_uepmgzXkwBCejtiEquMgPS8cu0Q&usqp=CAU" alt="bank"/>
                 <h1> Bank of React </h1>
 
@@ -21,6 +22,7 @@ class Home extends Component{
 
                 <h2>Account Balance</h2>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
+                <br />
             </div>
         );
     }

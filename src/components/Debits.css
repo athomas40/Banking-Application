@@ -2,8 +2,11 @@
     margin-bottom: 50px;
 }
 
-
 .Debits-Transaction {
     display: flex;
     justify-content: space-around;
+}
+
+.BackgroundColor2{
+    background-color:#ffd8b1;
 }

@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Redirect } from 'react-router-dom';
 import './LogIn.css';
 
-class LogIn extends Component{
+
+class LogIn extends Component{ 
     constructor(){
         super()
         this.state ={
@@ -36,7 +37,7 @@ class LogIn extends Component{
         }
 
         return(
-            <div>
+            <div className="Style2">
                 <form onSubmit={this.handleSubmit}>
                 <h1>Log In Page</h1>
                 <div className="addSpace"></div>

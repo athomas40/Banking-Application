@@ -1,9 +1,12 @@
 .Credits {
-    margin-bottom: 50px;
+    margin-bottom: 50px ;
 }
-
 
 .Credits-Transaction {
     display: flex;
     justify-content: space-around;
+}
+
+.BackgroundColor1{
+    background-color: rgb(97, 253, 253);
 }

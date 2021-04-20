@@ -74,7 +74,7 @@ class Debits extends Component{
 
     render(){
         return(
-            <div> 
+            <div className = "BackgroundColor2"> 
                 <h1>Debits</h1>
                 <div>
                     {this.state.alldebits.map((debits, index) => {
@@ -124,7 +124,8 @@ class Debits extends Component{
                 <div> </div>
                 <h2>Account Balance</h2>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
-                
+
+                <br/>
                 <Link to="/">Home</Link>
                 <br />
                 <Link to="/logIn">Log In</Link>
