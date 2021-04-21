@@ -73,36 +73,18 @@ class Credits extends Component {
                 </div>
                     <h3>Enter a new credit transaction:</h3>
                     <form onSubmit={this.handleCreditSubmit}>
-                        <div>
-                            <label htmlFor="description">Description</label>
-                            <input
-                                type="text"
-                                name="description"
-                                onChange={this.handleDescriptionChange}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="amount">Amount</label>
-                            <input
-                                type="number"
-                                name="amount"
-                                onChange={this.handleAmountChange}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="date">Date</label>
-                            <input
-                                type="date"
-                                name="date"
-                                min="1970-01-01"
-                                max="2050-12-31"
-                                placeholder="yyyy-mm-dd"
-                                onChange={this.handleDateChange}
-                            />
-                        </div>
+                        <label>
+                            Description:
+                            <input type="text" name="description" onChange={this.handleDescriptionChange}/>
+                            Amount:
+                            <input type="number" name="amount" onChange={this.handleAmountChange}/>
+                            Date:
+                            <input type="date" name="date" min="2000-01-01" max="2022-12-31" placeholder="yyyy-mm-dd" onChange={this.handleDateChange}/>
+                        </label>
                         <button>Add transaction</button>
                 </form>
-
+                
+                <div className = "Spacing">
                 <h2>Account Balance</h2>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
                 
@@ -114,6 +96,7 @@ class Credits extends Component {
                 <Link to="/userProfile">User Profile</Link>
                 <br />
                 <Link to="/debits">Debits</Link>
+                </div>
             </div>  
         );
     }

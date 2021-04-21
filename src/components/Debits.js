@@ -91,37 +91,18 @@ class Debits extends Component{
 
                 <h3>Enter a new debit transaction:</h3>
                 <form onSubmit={this.submitDebits}>
-                    <div>
-                        <label htmlFor="description">Description</label>
-                        <input
-                            type="text"
-                            name="description"
-                            onChange={this.handleChangeDescription}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="amount">Amount</label>
-                        <input
-                            type="number"
-                            name="amount"
-                            onChange={this.handleChangeAmount}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="date">Date</label>
-                        <input
-                            type="date"
-                            name="date"
-                            min="1970-01-01"
-                            max="2050-12-31"
-                            placeholder="yyyy-mm-dd"
-                            onChange={this.handleChangeDate}
-                        />
-                    </div>
+                    <label>
+                        Description:
+                        <input type="text" name="description" onChange={this.handleChangeDescription}/>
+                        Amount:
+                        <input type="number" name="amount" onChange={this.handleChangeAmount}/>
+                        Date:
+                        <input type="date" name="date" min="2000-01-01" max="2022-12-31" placeholder="yyyy-mm-dd" onChange={this.handleChangeDate}/>
+                    </label>
                     <button>Add transaction</button>
                 </form>
 
-                <div> </div>
+                <div className = "Spacing"> 
                 <h2>Account Balance</h2>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
 
@@ -132,7 +113,7 @@ class Debits extends Component{
                 <br />
                 <Link to="/userProfile">User Profile</Link>
                 <br />
-                <Link to="/credits">Credits</Link>
+                <Link to="/credits">Credits</Link></div>
         </div>
         );
     }

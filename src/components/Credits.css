@@ -8,5 +8,10 @@
 }
 
 .BackgroundColor1{
-    background-color: rgb(97, 253, 253);
+    background-color: rgb(255, 255, 255);
+    border: 50px solid rgb(97, 253, 253);
+}
+
+.Spacing{
+    margin: 50px;
 }

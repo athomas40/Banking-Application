@@ -53,6 +53,7 @@ class LogIn extends Component{
                 <div className="addSpace"></div>
                 <button>Log In</button>
                 </form>
+                <br />
             </div>
         );
     }
