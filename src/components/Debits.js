@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
+import './Debits.css';
 
 class Debits extends Component{
     constructor(props){
@@ -73,21 +74,22 @@ class Debits extends Component{
 
     render(){
         return(
-            <div>
-                <div>{this.props.value}</div>
+            <div className = "BackgroundColor2"> 
                 <h1>Debits</h1>
-                {
-                    this.state.alldebits.map( (debits, index) => {
-                        return (
-                            <div>
-                                <li key={index}>${debits[1]} {debits[0]} {debits[2]}</li>
-                            </div>
-                        )
-                    })
-                }
-                
                 <div>
-                <br></br>
+                    {this.state.alldebits.map((debits, index) => {
+                        return (
+                            <div className="Debits-Transaction" key={index}>
+                                <p>Description: {debits[0]}</p>
+                                <p>Amount: {debits[1]}</p>
+                                <p>Date: {debits[2]}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+                <br />
+
+                <h3>Enter a new debit transaction:</h3>
                 <form onSubmit={this.submitDebits}>
                     <label>
                         Description:
@@ -97,21 +99,22 @@ class Debits extends Component{
                         Date:
                         <input type="date" name="date" min="2000-01-01" max="2022-12-31" placeholder="yyyy-mm-dd" onChange={this.handleChangeDate}/>
                     </label>
-                    <input type="submit" value="Submit" />
+                    <button>Add transaction</button>
                 </form>
+
+                <div className = "Spacing"> 
                 <h2>Account Balance</h2>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
-                {/* <AccountBalance accountBalance={this.state.balance}/> */}
-                </div>
-                <br></br>
+
+                <br/>
                 <Link to="/">Home</Link>
-                <div></div>
+                <br />
                 <Link to="/logIn">Log In</Link>
-                <div></div>
+                <br />
                 <Link to="/userProfile">User Profile</Link>
-                <div></div>
-                <Link to="/credits">Credits</Link>
-            </div>
+                <br />
+                <Link to="/credits">Credits</Link></div>
+        </div>
         );
     }
 }

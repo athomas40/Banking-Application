@@ -1,13 +1,13 @@
-.Credits {
-    margin-bottom: 50px ;
+.Debits {
+    margin-bottom: 50px;
 }
 
-.Credits-Transaction {
+.Debits-Transaction {
     display: flex;
     justify-content: space-around;
 }
 
-.BackgroundColor1{
+.BackgroundColor2{
     background-color: rgb(255, 255, 255);
     border: 50px solid #c5f8f8;
 }
