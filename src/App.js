@@ -104,7 +104,7 @@ class App extends Component {
         const DebitComponent = () => (<Debits allDebits={this.state.debits} accountBalance={this.state.accountBalance} handlerDebit={this.handlerDebit}/>)
         return (
             <div className="App">
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                   <Switch>
                     <Route exact path="/" component={HomeComponent} />
                     <Route exact path="/userProfile" render={UserProfileComponent} />
