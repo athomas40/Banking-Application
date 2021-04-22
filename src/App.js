@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import Debits from './components/Debits';
@@ -104,7 +104,7 @@ class App extends Component {
         const DebitComponent = () => (<Debits allDebits={this.state.debits} accountBalance={this.state.accountBalance} handlerDebit={this.handlerDebit}/>)
         return (
             <div className="App">
-                <Router basename={process.env.PUBLIC_URL}>
+                <Router>
                   <Switch>
                     <Route exact path="/" component={HomeComponent} />
                     <Route exact path="/userProfile" render={UserProfileComponent} />
